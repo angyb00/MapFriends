@@ -14,6 +14,10 @@
 		7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDDB26F3F90D009DD310 /* project1Tests.swift */; };
 		7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDE626F3F90D009DD310 /* project1UITests.swift */; };
 		7316FDF526F3F92D009DD310 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDF426F3F92D009DD310 /* .gitignore */; };
+		76F158B126FAE6A500F4470C /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F158B026FAE6A500F4470C /* loginScreen.swift */; };
+		76F158B326FAE75900F4470C /* loginAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F158B226FAE75900F4470C /* loginAuth.swift */; };
+		76F158B526FAEA2200F4470C /* loginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F158B426FAEA2200F4470C /* loginTest.swift */; };
+		76F158B726FAEC1B00F4470C /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F158B626FAEC1B00F4470C /* HomeScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		7316FDE626F3F90D009DD310 /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		7316FDE826F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		76F158B026FAE6A500F4470C /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
+		76F158B226FAE75900F4470C /* loginAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAuth.swift; sourceTree = "<group>"; };
+		76F158B426FAEA2200F4470C /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
+		76F158B626FAEC1B00F4470C /* HomeScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 				7316FDCD26F3F90D009DD310 /* Assets.xcassets */,
 				7316FDD226F3F90D009DD310 /* Info.plist */,
 				7316FDCF26F3F90D009DD310 /* Preview Content */,
+				76F158B026FAE6A500F4470C /* loginScreen.swift */,
+				76F158B226FAE75900F4470C /* loginAuth.swift */,
+				76F158B626FAEC1B00F4470C /* HomeScreen.xib */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -120,6 +131,7 @@
 			children = (
 				7316FDDB26F3F90D009DD310 /* project1Tests.swift */,
 				7316FDDD26F3F90D009DD310 /* Info.plist */,
+				76F158B426FAEA2200F4470C /* loginTest.swift */,
 			);
 			path = project1Tests;
 			sourceTree = "<group>";
@@ -236,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F158B726FAEC1B00F4470C /* HomeScreen.xib in Resources */,
 				7316FDD126F3F90D009DD310 /* Preview Assets.xcassets in Resources */,
 				7316FDF526F3F92D009DD310 /* .gitignore in Resources */,
 				7316FDCE26F3F90D009DD310 /* Assets.xcassets in Resources */,
@@ -263,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F158B126FAE6A500F4470C /* loginScreen.swift in Sources */,
+				76F158B326FAE75900F4470C /* loginAuth.swift in Sources */,
 				7316FDCC26F3F90B009DD310 /* ContentView.swift in Sources */,
 				7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */,
 			);
@@ -273,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */,
+				76F158B526FAEA2200F4470C /* loginTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
