@@ -7,42 +7,44 @@
 
 import Foundation
 
-func backendLogin(username: String, password: String) {
-    
-}
+class BackendService {
+    func backendLogin(username: String, password: String) {
+        
+    }
 
-func backendLogout() {
-    
-}
+    func backendLogout() {
+        
+    }
 
-func backendGetLocations() -> [String] {
-    return []
-}
+    func backendGetLocations() -> [String] {
+        return []
+    }
 
-func backendGetSublocations(at location: String) -> [String] {
-    return []
-}
+    func backendGetSublocations(at location: String) -> [String] {
+        return []
+    }
 
-func backendGetGroups(at location: String) -> [String] {
-    return []
-}
+    func backendGetGroups(at location: String) -> [String] {
+        return []
+    }
 
-func backendJoinGroup(_ group: String) {
-    
-}
+    func backendJoinGroup(_ group: String) {
+        
+    }
 
-func backendLeaveGroup(_ group: String) {
-    
-}
+    func backendLeaveGroup(_ group: String) {
+        
+    }
 
-func backendCreateGroup(name: String, at location: String) {
-    
-}
+    func backendCreateGroup(name: String, at location: String) {
+        
+    }
 
-func backendGetReviews(for sublocation: String, at location: String) -> [String] {
-    return []
-}
+    func backendGetReviews(for sublocation: String, at location: String) -> [String] {
+        return []
+    }
 
-func backendPostReview(for sublocation: String, at location: String, text: String) {
-    
+    func backendPostReview(for sublocation: String, at location: String, text: String) {
+        
+    }
 }
