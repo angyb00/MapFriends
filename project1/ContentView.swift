@@ -17,7 +17,8 @@ struct ContentView: View {
                 Text("Friend 2")
                 Text("Friend 3")
                 Text("Friend 4")
-            }.toolbar(content: {
+            }.navigationTitle("Friends")
+            .toolbar(content: {
                 EditButton()
             })
         }
