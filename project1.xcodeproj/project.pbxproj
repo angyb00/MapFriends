@@ -15,6 +15,8 @@
 		7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDDB26F3F90D009DD310 /* project1Tests.swift */; };
 		7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDE626F3F90D009DD310 /* project1UITests.swift */; };
 		7316FDF526F3F92D009DD310 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDF426F3F92D009DD310 /* .gitignore */; };
+		738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
+		738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
 		73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
 		73A2453F26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,7 @@
 		7316FDE626F3F90D009DD310 /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		7316FDE826F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		738F8746270FA6160095F73D /* ReviewBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoardView.swift; sourceTree = "<group>"; };
 		73A2453D26FD0C7600FE29D9 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,7 @@
 				7316FDD226F3F90D009DD310 /* Info.plist */,
 				7316FDCF26F3F90D009DD310 /* Preview Content */,
 				73A2453D26FD0C7600FE29D9 /* BackendService.swift */,
+				738F8746270FA6160095F73D /* ReviewBoardView.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7316FDCC26F3F90B009DD310 /* ContentView.swift in Sources */,
+				738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */,
 				73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */,
 				7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */,
 			);
@@ -291,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */,
+				738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
