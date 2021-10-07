@@ -29,5 +29,23 @@ class project1Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testFriendsList(){
+        
+        var list = friendsList()
+        XCTAssertEqual(list.friends.contains("Mike Wazowski"), true)
+        list.removeFriend(remove: "Mike Wazowski")
+        XCTAssertEqual(list.friends.contains("Mike Wazowski"), false)
+        list.addFriend(add: "Rick James")
+        XCTAssertEqual(list.friends.contains("Rick James"), true)
+    }
+    
+    func testSettings(){
+        var setting = settings()
+        
+        setting.darkMode = true
+        XCTAssertEqual(setting.darkMode, true)
+        
+    }
 
 }
