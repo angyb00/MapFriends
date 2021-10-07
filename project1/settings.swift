@@ -7,10 +7,10 @@ struct settings {
     let email: String
     let firstName: String
     let lastName: String
-     
+    var darkMode: Bool = false  
+    
     func edit_profile() {}
      
-    func darkMode() {}
      
     func logOut() {}
     
