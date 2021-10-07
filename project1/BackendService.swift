@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class BackendService {
-    private static var currentUsername: String? = nil
-    private static var currentUserGroups: [String] = []
+    static var currentUsername: String? = nil
+    static var currentUserGroups: [String] = []
     
     // Example data
     private static let locations = [
