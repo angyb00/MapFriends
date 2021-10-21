@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
+    
+    @ObservedObject var login: LoginAuth
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        var body: some View {
+            if self.login.isLoggedin || isAlreadyLogin(){
+                DashBoardView(latitude: 0.0, longitude: 0.0)
+            } else {
+                LoginView()
+            }
+
+        }
+    
+    func isAlreadyLogin() -> Bool {
+        let loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
+        print(loggedIn)
+        return loggedIn
     }
 }
