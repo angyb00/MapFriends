@@ -7,17 +7,37 @@
 
 import SwiftUI
 
+private struct Review: Identifiable {
+    let content: String
+    let id = UUID()
+}
+
 struct ReviewBoardView: View {
+    @State private var reviews = BackendService.getReviews(for: "Disneyland", at: "Los Angeles").map {Review(content: $0)}
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Reviews for Disneyland at Los Angeles")
-                .bold()
-            Button("Add Review") {
-                
+            VStack(alignment: .leading) {
+                Text("Reviews for Disneyland at Los Angeles")
+                    .font(.title)
+                    .bold()
+                Button("Add Review") {
+                    let newReview = "Zakee K. - The mouse sucks"
+                    
+                    BackendService.postReview(for: "Disneyland", at: "Los Angeles", text: newReview)
+                    refreshReviews()
+                }
+            }.padding()
+            
+            List(reviews) {
+                Text($0.content)
+                    .padding()
             }
-            Text(BackendService.getReviews(for: "Disneyland", at: "Los Angeles")[0])
-            Text(BackendService.getReviews(for: "Disneyland", at: "Los Angeles")[1])
         }
+    }
+    
+    func refreshReviews() {
+        reviews = BackendService.getReviews(for: "Disneyland", at: "Los Angeles").map {Review(content: $0)}
     }
 }
 

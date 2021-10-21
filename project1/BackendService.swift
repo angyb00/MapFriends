@@ -11,6 +11,13 @@ import SwiftUI
 class BackendService {
     static var currentUsername: String? = nil
     static var currentUserGroups: [String] = []
+    private static var currentFriendsList: [String] = [
+        "John Deer",
+        "Amanda Vibes",
+        "Michael Meyers",
+        "Freddy Kruger",
+        "Chucky the Doll"
+    ]
     
     // Example data
     private static let locations = [
@@ -122,7 +129,6 @@ class BackendService {
                 "Neku S. - Quisque lectus nisi, laoreet sit amet aliquam a, tincidunt vitae orci.",
             ]
         ]
-
     ]
     
     static func login(username: String, password: String) {
@@ -151,9 +157,7 @@ class BackendService {
     }
 
     static func leaveGroup(_ group: String) {
-        currentUserGroups.removeAll(where: {(x) -> Bool in
-            return x == group
-        })
+        currentUserGroups.removeAll {$0 == group}
     }
 
     static func createGroup(name: String, at location: String) {
@@ -166,5 +170,17 @@ class BackendService {
 
     static func postReview(for sublocation: String, at location: String, text: String) {
         reviews[location]![sublocation]!.append(text)
+    }
+    
+    static func getFriends() -> [String] {
+        return currentFriendsList
+    }
+    
+    static func addFriend(_ name: String) {
+        currentFriendsList.append(name)
+    }
+    
+    static func removeFriend(_ name: String) {
+        currentFriendsList.removeAll {$0 == name}
     }
 }

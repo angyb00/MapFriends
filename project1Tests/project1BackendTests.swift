@@ -15,7 +15,7 @@ class project1BackendTests : XCTestCase {
         BackendService.login(username: "Zakee K.", password: "asdf")
         XCTAssertEqual(BackendService.currentUsername, "Zakee K.")
         BackendService.logout()
-        XCTAssertEqual(BackendService.currentUsername, nil)
+        XCTAssertNil(BackendService.currentUsername)
     }
     
     func testLocations() {
@@ -25,7 +25,7 @@ class project1BackendTests : XCTestCase {
     
     func testGroups() {
         BackendService.login(username: "Zakee K.", password: "asdf")
-        XCTAssertNotEqual(BackendService.currentUsername, nil)
+        XCTAssertNotNil(BackendService.currentUsername)
         
         XCTAssertTrue(BackendService.getGroups(at: "New York").contains("Joycon Boyz Memorial Group"))
         
@@ -36,26 +36,38 @@ class project1BackendTests : XCTestCase {
         XCTAssertFalse(BackendService.currentUserGroups.contains("Joycon Boyz Memorial Group"))
         
         BackendService.logout()
-        XCTAssertEqual(BackendService.currentUsername, nil)
+        XCTAssertNil(BackendService.currentUsername)
     }
     
     func testReviews() {
         BackendService.login(username: "Zakee K.", password: "asdf")
-        XCTAssertNotEqual(BackendService.currentUsername, nil)
+        XCTAssertNotNil(BackendService.currentUsername)
         
         let dr = BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
-        XCTAssertTrue(dr.contains(where: {(x) -> Bool in
-            x.contains("Sora K. H.")
-        }))
+        XCTAssertTrue(dr.contains { $0.contains("Sora K. H.") })
         
         BackendService.postReview(for: "Disneyland", at: "Los Angeles", text: "Zakee K. - The mouse sucks")
         
         let newDr = BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
-        XCTAssertTrue(newDr.contains(where: {(x) -> Bool in
-            x.contains("Zakee K.")
-        }))
+        XCTAssertTrue(newDr.contains { $0.contains("Zakee K.") })
         
         BackendService.logout()
-        XCTAssertEqual(BackendService.currentUsername, nil)
+        XCTAssertNil(BackendService.currentUsername)
+    }
+    
+    func testFriends() {
+        BackendService.login(username: "Zakee K.", password: "asdf")
+        XCTAssertNotNil(BackendService.currentUsername)
+        
+        XCTAssertTrue(BackendService.getFriends().contains {$0 == "John Deer"})
+        
+        BackendService.addFriend("Swan S.")
+        XCTAssertTrue(BackendService.getFriends().contains {$0 == "Swan S."})
+        
+        BackendService.removeFriend("Swan S.")
+        XCTAssertFalse(BackendService.getFriends().contains {$0 == "Swan S."})
+        
+        BackendService.logout()
+        XCTAssertNil(BackendService.currentUsername)
     }
 }
