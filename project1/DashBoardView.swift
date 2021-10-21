@@ -15,8 +15,8 @@ struct DashBoardView: View {
     var longitude: CLLocationDegrees
     
     init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        self.latitude = 0.0
-        self.longitude = 0.0
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     @State var selectedView = 1
@@ -25,7 +25,7 @@ struct DashBoardView: View {
             
         TabView(selection: $selectedView) {
             
-            MapView(coordinate: CLLocationCoordinate2D(latitude: 37.334_900, longitude: -122.009_020))
+            MapView(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
                     .padding()
                     .font(.callout)
                     .tabItem {

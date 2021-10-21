@@ -20,6 +20,7 @@
 		76F158B726FAEC1B00F4470C /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F158B626FAEC1B00F4470C /* HomeScreen.xib */; };
 		7D0F3EA1270D731300B3DA4B /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0F3EA0270D731300B3DA4B /* DashBoardView.swift */; };
 		F55737A4271F778200B6F891 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55737A3271F778200B6F891 /* MapView.swift */; };
+		F55737C42721189500B6F891 /* mapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55737C32721189500B6F891 /* mapTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		76F158B626FAEC1B00F4470C /* HomeScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
 		7D0F3EA0270D731300B3DA4B /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		F55737A3271F778200B6F891 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F55737C32721189500B6F891 /* mapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				7316FDDB26F3F90D009DD310 /* project1Tests.swift */,
 				7316FDDD26F3F90D009DD310 /* Info.plist */,
 				76F158B426FAEA2200F4470C /* loginTest.swift */,
+				F55737C32721189500B6F891 /* mapTest.swift */,
 			);
 			path = project1Tests;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */,
 				76F158B526FAEA2200F4470C /* loginTest.swift in Sources */,
+				F55737C42721189500B6F891 /* mapTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
