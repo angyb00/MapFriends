@@ -20,6 +20,7 @@
 		738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
 		73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
 		73A2453F26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
+		73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC21052747143F00E7BC55 /* ReviewWritingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		738F8746270FA6160095F73D /* ReviewBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoardView.swift; sourceTree = "<group>"; };
 		73A2453D26FD0C7600FE29D9 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		73AC21052747143F00E7BC55 /* ReviewWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				7316FDCF26F3F90D009DD310 /* Preview Content */,
 				73A2453D26FD0C7600FE29D9 /* BackendService.swift */,
 				738F8746270FA6160095F73D /* ReviewBoardView.swift */,
+				73AC21052747143F00E7BC55 /* ReviewWritingView.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */,
 				7316FDCC26F3F90B009DD310 /* ContentView.swift in Sources */,
 				738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */,
 				73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */,

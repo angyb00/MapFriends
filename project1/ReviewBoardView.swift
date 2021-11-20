@@ -13,18 +13,35 @@ private struct Review: Identifiable {
 }
 
 struct ReviewBoardView: View {
-    @State private var reviews = BackendService.getReviews(for: "Disneyland", at: "Los Angeles").map {Review(content: $0)}
+    var location: String
+    var sublocation: String
+    @State private var reviews: [Review]
+    @State private var postFailedAlert: Bool = false
+    
+    init(for sublocation: String, at location: String) {
+        self.location = location
+        self.sublocation = sublocation
+        
+        do {
+            try reviews = BackendService.getReviews(for: sublocation, at: location).map { Review(content: $0) }
+        } catch {
+            reviews = []
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text("Reviews for Disneyland at Los Angeles")
+                Text("Reviews for \(sublocation) at \(location)")
                     .font(.title)
                     .bold()
                 Button("Add Review") {
                     let newReview = "Zakee K. - The mouse sucks"
-                    
-                    BackendService.postReview(for: "Disneyland", at: "Los Angeles", text: newReview)
+                    do {
+                    try BackendService.postReview(for: sublocation, at: location, text: newReview)
+                    } catch {
+                        // Don't actually post the thing
+                    }
                     refreshReviews()
                 }
             }.padding()
@@ -37,12 +54,17 @@ struct ReviewBoardView: View {
     }
     
     func refreshReviews() {
-        reviews = BackendService.getReviews(for: "Disneyland", at: "Los Angeles").map {Review(content: $0)}
+        guard let revs = try? BackendService.getReviews(for: sublocation, at: location) else {
+            reviews = []
+            return
+        }
+        
+        reviews = revs.map { Review(content: $0) }
     }
 }
 
 struct ReviewBoardView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewBoardView()
+        ReviewBoardView(for: "Disneyland", at: "Los Angeles")
     }
 }

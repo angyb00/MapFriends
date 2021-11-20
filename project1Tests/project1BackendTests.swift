@@ -20,14 +20,22 @@ class project1BackendTests : XCTestCase {
     
     func testLocations() {
         XCTAssertTrue(BackendService.getLocations().contains("London"))
-        XCTAssertTrue(BackendService.getSublocations(at: "London").contains("Big Ben"))
+        guard let sublocations = try? BackendService.getSublocations(at: "London") else {
+            XCTFail("Couldn't find location London in locations list.")
+            return
+        }
+        XCTAssertTrue(sublocations.contains("Big Ben"))
     }
     
     func testGroups() {
         BackendService.login(username: "Zakee K.", password: "asdf")
         XCTAssertNotNil(BackendService.currentUsername)
         
-        XCTAssertTrue(BackendService.getGroups(at: "New York").contains("Joycon Boyz Memorial Group"))
+        guard let groups = try? BackendService.getGroups(at: "New York") else {
+            XCTFail("Couldn't get groups for New York.")
+            return
+        }
+        XCTAssertTrue(groups.contains("Joycon Boyz Memorial Group"))
         
         BackendService.joinGroup("Joycon Boyz Memorial Group")
         XCTAssertTrue(BackendService.currentUserGroups.contains("Joycon Boyz Memorial Group"))
@@ -43,13 +51,17 @@ class project1BackendTests : XCTestCase {
         BackendService.login(username: "Zakee K.", password: "asdf")
         XCTAssertNotNil(BackendService.currentUsername)
         
-        let dr = BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
-        XCTAssertTrue(dr.contains { $0.contains("Sora K. H.") })
-        
-        BackendService.postReview(for: "Disneyland", at: "Los Angeles", text: "Zakee K. - The mouse sucks")
-        
-        let newDr = BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
-        XCTAssertTrue(newDr.contains { $0.contains("Zakee K.") })
+        do {
+            let dr = try BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
+            XCTAssertTrue(dr.contains { $0.contains("Sora K. H.") })
+            
+            try BackendService.postReview(for: "Disneyland", at: "Los Angeles", text: "Zakee K. - The mouse sucks")
+            
+            let newDr = try BackendService.getReviews(for: "Disneyland", at: "Los Angeles")
+            XCTAssertTrue(newDr.contains { $0.contains("Zakee K.") })
+        } catch {
+            XCTFail()
+        }
         
         BackendService.logout()
         XCTAssertNil(BackendService.currentUsername)

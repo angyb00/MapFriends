@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 
+enum BackendError: Error {
+    case locationNotFound
+    case sublocationNotFound
+}
+
 class BackendService {
     static var currentUsername: String? = nil
     static var currentUserGroups: [String] = []
@@ -144,12 +149,14 @@ class BackendService {
         return Array(locations.keys)
     }
 
-    static func getSublocations(at location: String) -> [String] {
-        return locations[location]!
+    static func getSublocations(at location: String) throws -> [String]  {
+        guard let loc = locations[location] else { throw BackendError.locationNotFound }
+        return loc
     }
 
-    static func getGroups(at location: String) -> [String] {
-        return groups[location]!
+    static func getGroups(at location: String) throws -> [String] {
+        guard let grps = groups[location] else { throw BackendError.locationNotFound }
+        return grps
     }
 
     static func joinGroup(_ group: String) {
@@ -160,15 +167,22 @@ class BackendService {
         currentUserGroups.removeAll {$0 == group}
     }
 
-    static func createGroup(name: String, at location: String) {
-        groups[location]!.append(name)
+    static func createGroup(name: String, at location: String) throws {
+        guard let grps = groups[location] else {throw BackendError.locationNotFound}
+        var groupsForLoc = grps
+        groupsForLoc.append(name)
+        groups[location] = groupsForLoc
     }
 
-    static func getReviews(for sublocation: String, at location: String) -> [String] {
-        return reviews[location]![sublocation]!
+    static func getReviews(for sublocation: String, at location: String) throws -> [String] {
+        guard let sublocs = reviews[location] else {throw BackendError.locationNotFound}
+        guard let revs = sublocs[sublocation] else {throw BackendError.sublocationNotFound}
+        return revs
     }
 
-    static func postReview(for sublocation: String, at location: String, text: String) {
+    static func postReview(for sublocation: String, at location: String, text: String) throws {
+        guard let sublocs = reviews[location] else {throw BackendError.locationNotFound}
+        guard let revs = sublocs[sublocation] else {throw BackendError.sublocationNotFound}
         reviews[location]![sublocation]!.append(text)
     }
     
