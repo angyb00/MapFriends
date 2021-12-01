@@ -13,7 +13,7 @@ struct ContentView: View {
 
         var body: some View {
             if self.login.isLoggedin || isAlreadyLogin(){
-                DashBoardView(latitude: 0.0, longitude: 0.0)
+                DashBoardView(latitude: 34.052235, longitude:  -118.243683)
             } else {
                 LoginView()
             }

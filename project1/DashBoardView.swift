@@ -26,10 +26,10 @@ struct DashBoardView: View {
         TabView(selection: $selectedView) {
             
             MapView(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                    .padding()
+                .padding(.top, 30)
                     .font(.callout)
                     .tabItem {
-                        Label("First Tab", systemImage: "1.circle")
+                        Label("Map", systemImage: "1.circle")
                     }
                     .tag(1)
 
@@ -39,7 +39,7 @@ struct DashBoardView: View {
                     .padding()
                     .font(.callout)
                     .tabItem {
-                        Label("Second Tab", systemImage: "2.circle")
+                        Label("Settings", systemImage: "2.circle")
                     }
                     .tag(2)
                 }
