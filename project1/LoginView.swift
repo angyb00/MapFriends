@@ -59,10 +59,7 @@ struct LoginView: View {
     }
     
     private func login() {
-        let isValid = LoginAuth.sharedInstance.verifyUser(userName: username, password: password)
-        if (isValid) {
-            
-        }
+        BackendService.login(username: username, password: password)
     }
 }
 

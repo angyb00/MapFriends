@@ -25,6 +25,7 @@
 		73B02DF1275984340084B87A /* ExistingGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B02DEF275984340084B87A /* ExistingGroups.swift */; };
 		73B02DF2275984340084B87A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B02DF0275984340084B87A /* DataManager.swift */; };
 		73B02DF42759843B0084B87A /* GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B02DF32759843B0084B87A /* GroupDetails.swift */; };
+		73B02DF6275985160084B87A /* CreateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B02DF5275985160084B87A /* CreateGroup.swift */; };
 		73FD409727598043007AAFA8 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409427598043007AAFA8 /* settingsView.swift */; };
 		73FD409827598043007AAFA8 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409527598043007AAFA8 /* DashBoardView.swift */; };
 		73FD409927598043007AAFA8 /* friendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409627598043007AAFA8 /* friendsList.swift */; };
@@ -71,6 +72,7 @@
 		73B02DEF275984340084B87A /* ExistingGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingGroups.swift; sourceTree = "<group>"; };
 		73B02DF0275984340084B87A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		73B02DF32759843B0084B87A /* GroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetails.swift; sourceTree = "<group>"; };
+		73B02DF5275985160084B87A /* CreateGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroup.swift; sourceTree = "<group>"; };
 		73FD409427598043007AAFA8 /* settingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
 		73FD409527598043007AAFA8 /* DashBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		73FD409627598043007AAFA8 /* friendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendsList.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				73FD409527598043007AAFA8 /* DashBoardView.swift */,
 				73FD409627598043007AAFA8 /* friendsList.swift */,
 				73FD409427598043007AAFA8 /* settingsView.swift */,
+				73B02DF5275985160084B87A /* CreateGroup.swift */,
 				73B02DF0275984340084B87A /* DataManager.swift */,
 				73B02DEF275984340084B87A /* ExistingGroups.swift */,
 				7316FDC926F3F90B009DD310 /* project1App.swift */,
@@ -309,6 +312,7 @@
 				73B02DF42759843B0084B87A /* GroupDetails.swift in Sources */,
 				73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */,
 				738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */,
+				73B02DF6275985160084B87A /* CreateGroup.swift in Sources */,
 				73B02DF1275984340084B87A /* ExistingGroups.swift in Sources */,
 				73FD409927598043007AAFA8 /* friendsList.swift in Sources */,
 				73B02DEE275983FF0084B87A /* LoginView.swift in Sources */,

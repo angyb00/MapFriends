@@ -6,31 +6,45 @@
 //
 
 import Foundation
+import Combine
 
 //not sure about this yet but we will need some sort of file with
 //master passwords that will either have hardcoded values for select
 //users, or we will need some other form of storing these values
 //once the password criteria is met 
 
-class loginAuth{
-   var  username: String
-    var  password: Int
+final class LoginAuth: NSObject, ObservableObject {
+    let defualtUsername = "testing"
+    let defualtPassword = "12345678"
     
-    init(username:String, password:Int){
-        self.username = username
-        self.password = password
-    }
+    @Published var isLoggedin : Bool = false
     
-    func userVerified() ->Bool {
+    private override init() { }
+    
+    static let sharedInstance = LoginAuth()
+    
+    func attemptLogin(userName: String, password: String) {
         //check to see if the username and password provided meet
         //criteria with some hardcoded values we will prove in the future
         //until we figure out a solution for storing these
-        return true
+        let validUserName = isValidUserName(userName)
+        let validPassword = isValidPassword(password)
+        if (validUserName && validPassword) {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(true, forKey: "loggedIn")
+            userDefaults.synchronize()
+            self.isLoggedin = true
+        }
     }
     
-    func passwordLength() ->Bool{
-        //check to see if the password meets length and custom character requirements
-        return true
+    func isValidUserName(_ userName: String) -> Bool {
+      let minUsernameLength = 6
+        return userName.count >= minUsernameLength && userName == defualtUsername
+    }
+      
+    func isValidPassword(_ password: String) -> Bool {
+        let minPasswordLength = 8
+        return password.count >= minPasswordLength && password == defualtPassword
     }
 }
 
