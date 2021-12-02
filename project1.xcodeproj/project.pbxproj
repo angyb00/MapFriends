@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7306F55F270F95200002427B /* project1BackendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306F55D270F91AF0002427B /* project1BackendTests.swift */; };
 		7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDC926F3F90B009DD310 /* project1App.swift */; };
 		7316FDCC26F3F90B009DD310 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDCB26F3F90B009DD310 /* ContentView.swift */; };
 		7316FDCE26F3F90D009DD310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDCD26F3F90D009DD310 /* Assets.xcassets */; };
@@ -14,6 +15,12 @@
 		7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDDB26F3F90D009DD310 /* project1Tests.swift */; };
 		7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDE626F3F90D009DD310 /* project1UITests.swift */; };
 		7316FDF526F3F92D009DD310 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDF426F3F92D009DD310 /* .gitignore */; };
+		73580D9B272209A80069A45B /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
+		738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
+		738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
+		73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
+		73A2453F26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
+		73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC21052747143F00E7BC55 /* ReviewWritingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7306F55D270F91AF0002427B /* project1BackendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1BackendTests.swift; sourceTree = "<group>"; };
 		7316FDC626F3F90B009DD310 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316FDC926F3F90B009DD310 /* project1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1App.swift; sourceTree = "<group>"; };
 		7316FDCB26F3F90B009DD310 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +55,9 @@
 		7316FDE626F3F90D009DD310 /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		7316FDE826F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		738F8746270FA6160095F73D /* ReviewBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoardView.swift; sourceTree = "<group>"; };
+		73A2453D26FD0C7600FE29D9 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		73AC21052747143F00E7BC55 /* ReviewWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +114,9 @@
 				7316FDCD26F3F90D009DD310 /* Assets.xcassets */,
 				7316FDD226F3F90D009DD310 /* Info.plist */,
 				7316FDCF26F3F90D009DD310 /* Preview Content */,
+				73A2453D26FD0C7600FE29D9 /* BackendService.swift */,
+				738F8746270FA6160095F73D /* ReviewBoardView.swift */,
+				73AC21052747143F00E7BC55 /* ReviewWritingView.swift */,
 			);
 			path = project1;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 		7316FDDA26F3F90D009DD310 /* project1Tests */ = {
 			isa = PBXGroup;
 			children = (
+				7306F55D270F91AF0002427B /* project1BackendTests.swift */,
 				7316FDDB26F3F90D009DD310 /* project1Tests.swift */,
 				7316FDDD26F3F90D009DD310 /* Info.plist */,
 			);
@@ -263,7 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */,
 				7316FDCC26F3F90B009DD310 /* ContentView.swift in Sources */,
+				738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */,
+				73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */,
 				7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7306F55F270F95200002427B /* project1BackendTests.swift in Sources */,
+				73A2453F26FD0C7600FE29D9 /* BackendService.swift in Sources */,
 				7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */,
+				73580D9B272209A80069A45B /* BackendService.swift in Sources */,
+				738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"project1/Preview Content\"";
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -444,6 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"project1/Preview Content\"";
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = project1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -464,6 +488,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				INFOPLIST_FILE = project1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,6 +510,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				INFOPLIST_FILE = project1Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,6 +531,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				INFOPLIST_FILE = project1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +551,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N29GT8PCM7;
 				INFOPLIST_FILE = project1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
