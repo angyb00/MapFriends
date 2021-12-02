@@ -44,12 +44,41 @@ struct DashBoardView: View {
                 .tabItem {
                     Label("Settings", systemImage: "3.circle")
                 }.tag(3)
+
         }
     }
 }
+
+
+func loadGroups(){
+    DataManager.shared.loadAllGroups()
+}
+
 
 struct DashBoardView_Previews: PreviewProvider {
     static var previews: some View {
         DashBoardView()
     }
 }
+
+
+struct TabView1:View {
+    @State var showCreateGroup = false
+    var body: some View {
+        Text(verbatim: "")
+    }
+}
+
+struct TabView2:View {
+    @State var buttonAction:()->Void
+
+    var body: some View {
+        Button("Welcome") {
+            self.buttonAction()
+        }
+    }
+    init(action:@escaping ()->Void) {
+        self.buttonAction = action
+    }
+}
+
