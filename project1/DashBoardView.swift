@@ -1,66 +1,66 @@
+import MapKit
 import SwiftUI
 import UIKit
 
+struct MapView: UIViewRepresentable {
+    var coordinate: CLLocationCoordinate2D
+
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+
+    func updateUIView(_ view: MKMapView, context: Context) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        view.setRegion(region, animated: true)
+    }
+}
+
 struct DashBoardView: View {
-    @State var selectedView = 1
-    @State var showCreateGroup = false
-    @State var showGroups = false
+    @State var latitude: CLLocationDegrees = 34.052235
+    @State var longitude: CLLocationDegrees = -118.243683
 
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            TabView(selection: $selectedView) {
-                TabView1()
-                    .tabItem {
-                        Label("Map", systemImage: "1.circle")
-                    }
-                    .tag(1)
-
-                TabView2(action: {
-                    self.selectedView = 1
-                })
-                    .tabItem {
-                        Label("More", systemImage: "2.circle")
-                    }
-                    .tag(2)
-                    .position(x: 60, y: 40)
-            }.onAppear {
-                loadGroups()
-            }
-            Button {
-                self.showCreateGroup = true
-            } label: {
-                Image(systemName: "plus.circle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }.frame(width: 44, height: 44).padding(16)
-                .fullScreenCover(isPresented: $showCreateGroup) {
-                print("")
-            } content: {
-                GroupDetails()
-            }
-            Button {
-                self.showGroups = true
-            } label: {
-                Text("Groups")
-            }.frame(width: 64, height: 44).padding(.init(top: 16, leading: 350, bottom: 0, trailing:0))
-                .fullScreenCover(isPresented: $showGroups) {
-                    print("")
-                } content: {
-                    ExistingGroups()
+        // Tabs to transition to different views
+        TabView {
+            MapView(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+                .padding(.top, 30)
+                .font(.callout)
+                .tabItem {
+                    Label("Map", systemImage: "1.circle")
                 }
+                .tag(1)
+            //friends list view
+            friendsList()
+                // .padding()
+                .font(.callout)
+                .tabItem {
+                    Label("Friends", systemImage: "2.circle")
+                }
+                .tag(2)
+            //Settings view
+            settingsView()
+                .font(.callout)
+                .tabItem {
+                    Label("Settings", systemImage: "3.circle")
+                }.tag(3)
+
         }
     }
 }
 
+
 func loadGroups(){
     DataManager.shared.loadAllGroups()
 }
+
 
 struct DashBoardView_Previews: PreviewProvider {
     static var previews: some View {
         DashBoardView()
     }
 }
+
 
 struct TabView1:View {
     @State var showCreateGroup = false
@@ -81,3 +81,4 @@ struct TabView2:View {
         self.buttonAction = action
     }
 }
+
