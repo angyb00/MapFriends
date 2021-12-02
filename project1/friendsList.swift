@@ -39,12 +39,15 @@ struct friendDetails: View {
 
 /* Our list of friends
  *Can be edited to remove friends with the use of edit button
- *List all the friends and their emojis using navigationView and a list view builders
- *ForEach is utilized so we can utilize .onDelete method
- *NavigationLink is used to switch to our new view, friendDetails  
-*/
+ *List all the friends and their emojis using navigationView and a List view builders
+  *ForEach is utilized so we can utilize .onDelete method
+  *NavigationLink is used to switch to our new view, friendDetails
+  */
 struct friendsList: View {
-    @State private var listOfPeople: [friends] = [friends(name: "John Deer", emoji: "🕷"), friends(name: "Amanda Vibes", emoji: "🎃"), friends(name: "Michael Meyers", emoji: "👻"), friends(name: "Freddy Kruger", emoji: "☠️"), friends(name: "Chucky the Doll", emoji: "👽")]
+    @State private(set) var listOfPeople: [friends] = [friends(name: "John Deer", emoji: "🕷"), friends(name: "Amanda Vibes", emoji: "🎃"), friends(name: "Michael Meyers", emoji: "👻"), friends(name: "Freddy Kruger", emoji: "☠️"), friends(name: "Chucky the Doll", emoji: "👽")]
+    @State var addFriend = false
+    @State var friendName: String = ""
+    @State var searchText = ""
 
     var body: some View {
         NavigationView {
@@ -58,19 +61,56 @@ struct friendsList: View {
                                 .font(.headline)
                         }.padding()
                     }
+
                 }.onDelete(perform: delete)
             }
             .navigationTitle("Friends")
+            .navigationBarItems(leading: Button(action: {
+                addFriend = !addFriend
+            }, label: {
+                Image(systemName: "person.badge.plus.fill")
+                    .font(.largeTitle)
+            }))
 
             .toolbar {
                 EditButton()
+                    .font(.headline)
+            }
+        }.sheet(isPresented: $addFriend) { //Pop up view to add new friends
+            VStack {
+                Image(systemName: "person.badge.plus")
+                    .padding()
+                    .font(.largeTitle)
+
+                HStack {
+                    
+                    Text("Add friend: ")
+                    TextField("Enter Name", text: self.$friendName)
+
+                }.padding()
+                
+                //Add to list of friends and drop down sheet
+                Button(action: {
+                    listOfPeople.append(friends(name: friendName, emoji: "🧍‍♂️"))
+                    addFriend = !addFriend
+                }, label: {
+                    Text("Add Friend")
+                })
+                
+                //Drop down sheet
+                Button(action:{
+                    addFriend = !addFriend
+                },label: {
+                    Text("Cancel")
+                })
+                    .padding()
             }
         }
     }
 
     // will be called in .onDelete method to remove friends
     private func delete(offsets: IndexSet) {
-        self.listOfPeople.remove(atOffsets: offsets)
+        listOfPeople.remove(atOffsets: offsets)
     }
 }
 
