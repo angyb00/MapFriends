@@ -29,5 +29,33 @@ class project1Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testFriendsList(){
+        let friendsList = friendsList()
+        
+        
+        XCTAssertEqual(friendsList.listOfPeople.count, 5)
+        XCTAssertFalse(friendsList.addFriend)
+        XCTAssertEqual(friendsList.friendName, "")
+        
+       
+    }
+    
+    func testSettingsView(){
+        let settings = settingsView()
+        XCTAssertFalse(settings.notiEnabled)
+        XCTAssertEqual(settings.username, "John Doe")
+        
+
+        
+    }
+    func testMainView(){
+        let MainView = DashBoardView()
+        
+        XCTAssertEqual(MainView.longitude, -118.243683)
+        XCTAssertEqual(MainView.latitude, 34.052235)
+        
+    }
+
 
 }
