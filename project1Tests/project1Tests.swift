@@ -31,21 +31,31 @@ class project1Tests: XCTestCase {
     }
     
     func testFriendsList(){
+        let friendsList = friendsList()
         
-        var list = friendsList()
-        XCTAssertEqual(list.friends.contains("Mike Wazowski"), true)
-        list.removeFriend(remove: "Mike Wazowski")
-        XCTAssertEqual(list.friends.contains("Mike Wazowski"), false)
-        list.addFriend(add: "Rick James")
-        XCTAssertEqual(list.friends.contains("Rick James"), true)
+        
+        XCTAssertEqual(friendsList.listOfPeople.count, 5)
+        XCTAssertFalse(friendsList.addFriend)
+        XCTAssertEqual(friendsList.friendName, "")
+        
+       
     }
     
-    func testSettings(){
-        var setting = settings()
+    func testSettingsView(){
+        let settings = settingsView()
+        XCTAssertFalse(settings.notiEnabled)
+        XCTAssertEqual(settings.username, "John Doe")
         
-        setting.darkMode = true
-        XCTAssertEqual(setting.darkMode, true)
+
         
     }
+    func testMainView(){
+        let MainView = DashBoardView()
+        
+        XCTAssertEqual(MainView.longitude, -118.243683)
+        XCTAssertEqual(MainView.latitude, 34.052235)
+        
+    }
+
 
 }
