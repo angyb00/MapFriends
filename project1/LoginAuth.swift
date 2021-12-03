@@ -1,50 +1,25 @@
-//
-//  loginAuth.swift
-//  project1
-//
-//  Created by Joji on 9/21/21.
-//
+import SwiftUI
 
-import Foundation
-import Combine
-
-//not sure about this yet but we will need some sort of file with
-//master passwords that will either have hardcoded values for select
-//users, or we will need some other form of storing these values
-//once the password criteria is met 
-
-final class LoginAuth: NSObject, ObservableObject {
-    let defualtUsername = "testing"
-    let defualtPassword = "12345678"
+// Decides view based on if logged in or not
+struct LoginAuth: View {
+    // Initial view will be log in view
+    // Once signedIn is true, view will change to dash board
+    @State var signedIn = false
     
-    @Published var isLoggedin : Bool = false
-    
-    private override init() { }
-    
-    static let sharedInstance = LoginAuth()
-    
-    func attemptLogin(userName: String, password: String) {
-        //check to see if the username and password provided meet
-        //criteria with some hardcoded values we will prove in the future
-        //until we figure out a solution for storing these
-        let validUserName = isValidUserName(userName)
-        let validPassword = isValidPassword(password)
-        if (validUserName && validPassword) {
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "loggedIn")
-            userDefaults.synchronize()
-            self.isLoggedin = true
+    var body: some View {
+        // if login pressed, change to dash board view
+        if signedIn {
+            DashBoardView()
         }
-    }
-    
-    func isValidUserName(_ userName: String) -> Bool {
-      let minUsernameLength = 6
-        return userName.count >= minUsernameLength && userName == defualtUsername
-    }
-      
-    func isValidPassword(_ password: String) -> Bool {
-        let minPasswordLength = 8
-        return password.count >= minPasswordLength && password == defualtPassword
+        // if login not pressed, stay on log in view
+        else {
+            LoginView(signedIn: $signedIn)
+        }
     }
 }
 
+struct LoginAuth_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginAuth()
+    }
+}
