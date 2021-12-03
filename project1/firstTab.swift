@@ -1,8 +1,7 @@
-
 import MapKit
 import SwiftUI
 
-struct MapView: UIViewRepresentable {
+struct MapView: UIViewRepresentable { // Used to create map
     var coordinate: CLLocationCoordinate2D
 
     func makeUIView(context: Context) -> MKMapView {
@@ -16,10 +15,10 @@ struct MapView: UIViewRepresentable {
     }
 }
 
+// Will go on as the Map View on Dash Board View
 struct firstTab: View {
     @State var latitude: CLLocationDegrees = 34.052235
     @State var longitude: CLLocationDegrees = -118.243683
-    @State var selectedView = 1
     @State var showCreateGroup = false
     @State var showGroups = false
 
@@ -31,7 +30,7 @@ struct firstTab: View {
                 .edgesIgnoringSafeArea(.top)
             VStack {
                 HStack {
-                    Button {
+                    Button { // Add groups button
                         self.showCreateGroup = true
                     } label: {
                         Image(systemName: "plus.circle.fill")
@@ -45,7 +44,7 @@ struct firstTab: View {
 
                     Spacer()
 
-                    Button {
+                    Button { // Show created groups button
                         self.showGroups = true
                     } label: {
                         Text("Groups")
