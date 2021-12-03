@@ -1,12 +1,7 @@
-
-
 import MapKit
 import SwiftUI
 
 struct DashBoardView: View {
-    @State var showCreateGroup = false
-    @State var showGroups = false
-
     var body: some View {
         ZStack(alignment: .topLeading) {
             TabView {
@@ -25,7 +20,7 @@ struct DashBoardView: View {
                     .tag(2)
 
                 // Settings view
-                LoginPage()
+                settings()
                     .tabItem {
                         Label("Settings", systemImage: "3.circle")
                     }.tag(3)
