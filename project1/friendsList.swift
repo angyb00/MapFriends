@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 // This will be used to list our friends
@@ -40,9 +41,9 @@ struct friendDetails: View {
 /* Our list of friends
  *Can be edited to remove friends with the use of edit button
  *List all the friends and their emojis using navigationView and a List view builders
-  *ForEach is utilized so we can utilize .onDelete method
-  *NavigationLink is used to switch to our new view, friendDetails
-  */
+ *ForEach is utilized so we can utilize .onDelete method
+ *NavigationLink is used to switch to our new view, friendDetails
+ */
 struct friendsList: View {
     @State private(set) var listOfPeople: [friends] = [friends(name: "John Deer", emoji: "🕷"), friends(name: "Amanda Vibes", emoji: "🎃"), friends(name: "Michael Meyers", emoji: "👻"), friends(name: "Freddy Kruger", emoji: "☠️"), friends(name: "Chucky the Doll", emoji: "👽")]
     @State var addFriend = false
@@ -76,31 +77,30 @@ struct friendsList: View {
                 EditButton()
                     .font(.headline)
             }
-        }.sheet(isPresented: $addFriend) { //Pop up view to add new friends
+        }.sheet(isPresented: $addFriend) {
             VStack {
                 Image(systemName: "person.badge.plus")
                     .padding()
                     .font(.largeTitle)
 
                 HStack {
-                    
                     Text("Add friend: ")
                     TextField("Enter Name", text: self.$friendName)
 
                 }.padding()
-                
-                //Add to list of friends and drop down sheet
+
+                // Add to list of friends and drop down sheet
                 Button(action: {
                     listOfPeople.append(friends(name: friendName, emoji: "🧍‍♂️"))
                     addFriend = !addFriend
                 }, label: {
                     Text("Add Friend")
                 })
-                
-                //Drop down sheet
-                Button(action:{
+
+                // Drop down sheet
+                Button(action: {
                     addFriend = !addFriend
-                },label: {
+                }, label: {
                     Text("Cancel")
                 })
                     .padding()
