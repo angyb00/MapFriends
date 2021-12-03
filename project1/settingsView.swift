@@ -1,8 +1,24 @@
+
 import SwiftUI
 
+struct LoginPage: View {
+    @State var loggedOut: Bool = false
+
+    var body: some View {
+        if loggedOut {
+            LoginAuth()
+        }
+        else {
+            settingsView(loggedOut: $loggedOut)
+        }
+    }
+}
+
 struct settingsView: View {
-    @State var username = ""
+    @State var username = "John Doe"
     @State var notiEnabled = false
+    @Binding var loggedOut: Bool
+
     var body: some View {
         NavigationView {
             Form {
@@ -21,6 +37,9 @@ struct settingsView: View {
                         Text("1.0")
                     }
                 }
+                Section {
+                    Button(action: { loggedOut = true }, label: { Text("Log out") })
+                }
             }.navigationTitle("Settings")
         }
     }
@@ -28,7 +47,6 @@ struct settingsView: View {
 
 struct settingsView_Previews: PreviewProvider {
     static var previews: some View {
-        settingsView()
+        LoginPage()
     }
 }
-
