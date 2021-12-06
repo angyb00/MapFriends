@@ -1,9 +1,7 @@
 
 import SwiftUI
 
-
 struct ReviewWritingView: View {
-    
     @State var location: String
     @State var sublocation: String
     @State var reviewText: String = "Write your review here..."
@@ -26,19 +24,19 @@ struct ReviewWritingView: View {
             TextEditor(text: $reviewText)
                 .font(.system(size: 18))
                 .border(.blue, width: 3)
-            
-            //Button to post review
-            Button(action:{
-                postBtnAction()
-            }
-            , label: { Text("Post") })
+
+            // Button to post review
+            Button(action: {
+                       postBtnAction()
+                   },
+                   label: { Text("Post") })
                 .font(.system(size: 24))
                 .padding()
         }
     }
-    
-    //Add it to the list of reviews
-     func postBtnAction() {
+
+    // Add it to the list of reviews
+    func postBtnAction() {
         guard let usr = BackendService.currentUsername else {
             return
         }
