@@ -1,9 +1,3 @@
-//
-//  ReviewBoardView.swift
-//  project1
-//
-//  Created by Zakee Khattak on 10/7/21.
-//
 
 import SwiftUI
 
@@ -16,50 +10,42 @@ struct ReviewBoardView: View {
     var location: String
     var sublocation: String
     @State private var reviews: [Review]
-    @State private var postFailedAlert: Bool = false
-    
+    @State private var addReview = false // will determine to pull up text editor for writing
+
     init(for sublocation: String, at location: String) {
         self.location = location
         self.sublocation = sublocation
-        
+
         do {
             try reviews = BackendService.getReviews(for: sublocation, at: location).map { Review(content: $0) }
         } catch {
             reviews = []
         }
     }
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Text("Reviews for \(sublocation) at \(location)")
                     .font(.title)
                     .bold()
+
+                // Bring up text editor for writing reviews
                 Button("Add Review") {
-                    let newReview = "Zakee K. - The mouse sucks"
-                    do {
-                    try BackendService.postReview(for: sublocation, at: location, text: newReview)
-                    } catch {
-                        // Don't actually post the thing
-                    }
-                    refreshReviews()
+                    addReview = !addReview
                 }
             }.padding()
-            
+
+            // Show previous reviews
             List(reviews) {
                 Text($0.content)
                     .padding()
             }
+
+            // sheet used for showing review text editor view
+        }.sheet(isPresented: $addReview) {
+            ReviewWritingView(for: "Disneyland", at: "Los Angeles")
         }
-    }
-    
-    func refreshReviews() {
-        guard let revs = try? BackendService.getReviews(for: sublocation, at: location) else {
-            reviews = []
-            return
-        }
-        
-        reviews = revs.map { Review(content: $0) }
     }
 }
 
