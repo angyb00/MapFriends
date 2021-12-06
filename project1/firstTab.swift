@@ -2,33 +2,50 @@
 import MapKit
 import SwiftUI
 
-struct MapView: UIViewRepresentable { // Used to create map
-    var coordinate: CLLocationCoordinate2D
+struct PlaceAnnotationView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "mappin.circle.fill")
+                .font(.title)
+                .foregroundColor(.red)
 
-    func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+            Image(systemName: "arrowtriangle.down.fill")
+                .font(.caption)
+                .foregroundColor(.red)
+                .offset(x: 0, y: -5)
+        }
     }
+}
 
-    func updateUIView(_ view: MKMapView, context: Context) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        view.setRegion(region, animated: true)
-    }
+struct Location: Identifiable {
+    let id = UUID()
+    var locationName: String
+    var coordinates: CLLocationCoordinate2D
 }
 
 // Will go on as the Map View on Dash Board View
 struct firstTab: View {
-    @State var latitude: CLLocationDegrees = 34.052235
-    @State var longitude: CLLocationDegrees = -118.243683
     @State var showCreateGroup = false
     @State var showGroups = false
+    @State var reviewMode = false
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 33.81821, longitude: -117.9190), span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+    private(set) var locations = [Location(locationName: "DisneyLand", coordinates: .init(latitude: 33.8121, longitude: -117.9190))]
 
     var body: some View {
         ZStack {
-            MapView(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-                .padding(.top, 30)
-                .font(.callout)
-                .edgesIgnoringSafeArea(.top)
+            // Map view with clickable annotions
+            Map(coordinateRegion: $region, annotationItems: locations) { location in
+                MapAnnotation(coordinate: location.coordinates) {
+                    Button(action: {
+                        reviewMode = !reviewMode
+                    }, label: {
+                        PlaceAnnotationView()
+                    })
+                }
+            }
+            .padding(.top)
+            .edgesIgnoringSafeArea(.top)
+
             VStack {
                 HStack {
                     Button { // Add groups button
@@ -51,15 +68,15 @@ struct firstTab: View {
                         Text("Groups")
                             .bold()
                             .font(.headline)
-                    }.fullScreenCover(isPresented: $showGroups) {
-                        print("")
-                    } content: {
+                    }.fullScreenCover(isPresented: $showGroups) {} content: {
                         ExistingGroups()
                     }
                 }
 
                 Spacer()
             }
+        }.sheet(isPresented: $reviewMode) {
+            ReviewBoardView(for: "Disneyland", at: "Los Angeles")
         }
     }
 }
