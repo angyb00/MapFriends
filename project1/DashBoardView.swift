@@ -10,21 +10,21 @@ struct DashBoardView: View {
                 // Map view with groups
                 firstTab()
                     .tabItem {
-                        Label("Map", systemImage: "1.circle")
+                        Label("Map", systemImage: "map.fill")
                     }
                     .tag(1)
 
                 // Friends list tab
                 friendsList()
                     .tabItem {
-                        Label("Friends", systemImage: "2.circle")
+                        Label("Friends", systemImage: "person.crop.circle.fill")
                     }
                     .tag(2)
 
                 // Settings view
                 settings()
                     .tabItem {
-                        Label("Settings", systemImage: "3.circle")
+                        Label("Settings", systemImage: "gear")
                     }.tag(3)
 
             }.onAppear {
