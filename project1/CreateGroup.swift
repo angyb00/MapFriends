@@ -1,20 +1,14 @@
-//
-//  CreateGroup.swift
-//  project1
-//
-//  Created by Joji on 10/16/21.
-//
 
 import Foundation
 
 class Create {
-    struct Group:Codable,Hashable {
-        var groupName:String
-        var location:String
-        var poi:String
-        var groupNumber:Int
+    struct Group: Codable, Hashable {
+        var groupName: String
+        var location: String
+        var poi: String
+        var groupNumber: Int
 
-        enum CodingKeys:String,CodingKey {
+        enum CodingKeys: String, CodingKey {
             case groupName
             case location
             case poi
@@ -35,51 +29,51 @@ class Create {
             try container.encode(location, forKey: .location)
             try container.encode(poi, forKey: .poi)
             try container.encode(groupNumber, forKey: .groupNumber)
-
         }
 
-        init(groupName:String, location:String, poi:String, groupNumber:Int) {
+        init(groupName: String, location: String, poi: String, groupNumber: Int) {
             self.groupName = groupName
-            self.location  = location
+            self.location = location
             self.poi = poi
             self.groupNumber = groupNumber
         }
     }
 
-    func getNextGroupNumber()-> Int{
+    func getNextGroupNumber() -> Int {
         existingGroups.count
     }
 
-    var allGroups:Set<String>
-    var existingGroups:[Group]
+    var allGroups: Set<String>
+    var existingGroups: [Group]
 
     static var shared = Create()
 
-    private init(){
-        allGroups = Set<String>()
-        existingGroups = [Group]()
+    private init() {
+        self.allGroups = Set<String>()
+        self.existingGroups = [Group]()
     }
 
-    func checkExistance(name groupName:String) -> Bool {
-        self.allGroups.contains(groupName)
+    func checkExistance(name groupName: String) -> Bool {
+        allGroups.contains(groupName)
     }
-    func delete(at index:IndexSet){
+
+    func delete(at index: IndexSet) {
         existingGroups.remove(atOffsets: index)
         DispatchQueue.main.async {
             self.updateDB()
         }
     }
-    
-    func addGroup(group:Group){
+
+    func addGroup(group: Group) {
         allGroups.insert(group.groupName)
-        self.existingGroups.append(group)
+        existingGroups.append(group)
         updateDB()
     }
 
-    func updateDB(){
-        do{
+    func updateDB() {
+        do {
             try DataManager.shared.storeData()
-        } catch (let err as NSError){
+        } catch let err as NSError {
             print(err.localizedDescription)
         }
     }
