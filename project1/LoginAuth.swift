@@ -5,7 +5,7 @@ struct LoginAuth: View {
     // Initial view will be log in view
     // Once signedIn is true, view will change to dash board
     @State var signedIn = false
-    
+
     var body: some View {
         // if login pressed, change to dash board view
         if signedIn {
