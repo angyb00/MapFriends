@@ -1,10 +1,3 @@
-//
-//  BackendService.swift
-//  project1
-//
-//  Created by Zakee Khattak on 9/23/21.
-//
-
 import Foundation
 import SwiftUI
 
@@ -13,8 +6,8 @@ enum BackendError: Error {
     case sublocationNotFound
 }
 
-class BackendService {
-    static var currentUsername: String? = nil
+enum BackendService {
+    static var currentUsername: String?
     static var currentUserGroups: [String] = []
     private static var currentFriendsList: [String] = [
         "John Deer",
@@ -23,14 +16,14 @@ class BackendService {
         "Freddy Kruger",
         "Chucky the Doll"
     ]
-    
+
     // Example data
     private static let locations = [
         "New York": [
             "Broadway",
             "Statue of Liberty"
         ],
-        "Los Angeles" : [
+        "Los Angeles": [
             "Disneyland", // not really LA but who cares
             "Rodeo Drive"
         ],
@@ -50,7 +43,7 @@ class BackendService {
             "Shibuya 109"
         ]
     ]
-    
+
     // Example data
     private static var groups = [
         "New York": [
@@ -58,7 +51,7 @@ class BackendService {
             "Broadway-Goers",
             "Joycon Boyz Memorial Group"
         ],
-        "Los Angeles" : [
+        "Los Angeles": [
             "I❤️LA",
             "Let's Go Dodgers",
             "Hollywood Signposts",
@@ -80,8 +73,8 @@ class BackendService {
             "Harajuku Fashion Association"
         ]
     ]
-    
-    //L O R E M   I P S U M
+
+    // L O R E M   I P S U M
     private static var reviews = [
         "New York": [
             "Broadway": [
@@ -93,7 +86,7 @@ class BackendService {
                 "Alex L. - In posuere pretium ipsum ac fringilla. Curabitur eu facilisis velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum quis lacinia justo, sed pulvinar enim."
             ]
         ],
-        "Los Angeles" : [
+        "Los Angeles": [
             "Disneyland": [
                 "Sora K. H. - Quisque aliquet ex dapibus lectus dictum, nec pharetra orci porta. Sed lorem dolor, mattis quis nunc nec, malesuada porta massa.",
                 "Stan L. - Suspendisse risus magna, ultricies eget bibendum tincidunt, maximus id nisl. Nulla a dolor ac enim pulvinar pellentesque a id nisl. Integer luctus ut turpis vitae vehicula. "
@@ -131,11 +124,11 @@ class BackendService {
                 "Flynn S. - Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras condimentum elementum sem. Maecenas nec ultrices justo."
             ],
             "Shibuya 109": [
-                "Neku S. - Quisque lectus nisi, laoreet sit amet aliquam a, tincidunt vitae orci.",
+                "Neku S. - Quisque lectus nisi, laoreet sit amet aliquam a, tincidunt vitae orci."
             ]
         ]
     ]
-    
+
     static func login(username: String, password: String) {
         currentUsername = username
     }
@@ -149,7 +142,7 @@ class BackendService {
         return Array(locations.keys)
     }
 
-    static func getSublocations(at location: String) throws -> [String]  {
+    static func getSublocations(at location: String) throws -> [String] {
         guard let loc = locations[location] else { throw BackendError.locationNotFound }
         return loc
     }
@@ -164,37 +157,37 @@ class BackendService {
     }
 
     static func leaveGroup(_ group: String) {
-        currentUserGroups.removeAll {$0 == group}
+        currentUserGroups.removeAll { $0 == group }
     }
 
     static func createGroup(name: String, at location: String) throws {
-        guard let grps = groups[location] else {throw BackendError.locationNotFound}
+        guard let grps = groups[location] else { throw BackendError.locationNotFound }
         var groupsForLoc = grps
         groupsForLoc.append(name)
         groups[location] = groupsForLoc
     }
 
     static func getReviews(for sublocation: String, at location: String) throws -> [String] {
-        guard let sublocs = reviews[location] else {throw BackendError.locationNotFound}
-        guard let revs = sublocs[sublocation] else {throw BackendError.sublocationNotFound}
+        guard let sublocs = reviews[location] else { throw BackendError.locationNotFound }
+        guard let revs = sublocs[sublocation] else { throw BackendError.sublocationNotFound }
         return revs
     }
 
     static func postReview(for sublocation: String, at location: String, text: String) throws {
-        guard let sublocs = reviews[location] else {throw BackendError.locationNotFound}
-        guard let revs = sublocs[sublocation] else {throw BackendError.sublocationNotFound}
+        guard let sublocs = reviews[location] else { throw BackendError.locationNotFound }
+        guard let revs = sublocs[sublocation] else { throw BackendError.sublocationNotFound }
         reviews[location]![sublocation]!.append(text)
     }
-    
+
     static func getFriends() -> [String] {
         return currentFriendsList
     }
-    
+
     static func addFriend(_ name: String) {
         currentFriendsList.append(name)
     }
-    
+
     static func removeFriend(_ name: String) {
-        currentFriendsList.removeAll {$0 == name}
+        currentFriendsList.removeAll { $0 == name }
     }
 }
