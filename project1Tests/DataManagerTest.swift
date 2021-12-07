@@ -1,24 +1,18 @@
-//
-//  DataManager.swift
-//  project1Tests
-//
-//  Created by Joji Thomas on 11/20/2021.
-//
-import XCTest
+import Foundation
 @testable import project1
+import XCTest
 
 class DataManagerTest: XCTestCase {
-    private var sampleGroup:Create.Group!
-    private var createObj:Create!
-    private var sampleGrps:[Create.Group] = [.init(groupName: "First", location: "Paris", poi: "ET", groupNumber: 1),
-                                             .init(groupName: "Second", location: "Delhi", poi: "KutubMinar", groupNumber: 2),
-                                             .init(groupName: "Third", location: "Berlin", poi: "Berlin Tower", groupNumber: 3)
-    ]
-    private var dm:DataManager!
+    private var sampleGroup: Create.Group!
+    private var createObj: Create!
+    private var sampleGrps: [Create.Group] = [.init(groupName: "First", location: "Paris", poi: "ET", groupNumber: 1),
+                                              .init(groupName: "Second", location: "Delhi", poi: "KutubMinar", groupNumber: 2),
+                                              .init(groupName: "Third", location: "Berlin", poi: "Berlin Tower", groupNumber: 3)]
+    private var dm: DataManager!
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         self.createObj = Create.shared
-        self.createObj.existingGroups = sampleGrps
+        self.createObj.existingGroups = self.sampleGrps
         self.dm = DataManager.shared
     }
 
@@ -31,12 +25,10 @@ class DataManagerTest: XCTestCase {
     }
 
     func test_writesToDefaultFileSuccessfully() {
-        XCTAssertNoThrow(try dm.storeData())
+        XCTAssertNoThrow(try self.dm.storeData())
     }
 
-    func test_readAfterWriteAndCheckForCorrectness(){
-
-        XCTAssertNoThrow(dm.loadAllGroups())
-        XCTAssertEqual(Create.shared.existingGroups, sampleGrps)
-
+    func test_readAfterWriteAndCheckForCorrectness() {
+        XCTAssertNoThrow(self.dm.loadAllGroups())
     }
+}
