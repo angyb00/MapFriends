@@ -1,8 +1,7 @@
-
 import SwiftUI
 
 // This will be used to list our friends
-struct friends: Identifiable {
+struct friends: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let emoji: String
