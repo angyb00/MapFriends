@@ -1,10 +1,3 @@
-//
-//  DataManager.swift
-//  project1
-//
-//  Created by Joji Thomas 10/20/2021.
-//
-
 import Foundation
 
 class DataManager {
@@ -12,10 +5,11 @@ class DataManager {
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documents.appendingPathComponent("GroupDetails.plist")
     }
-    private init(){}
+
+    private init() {}
     static let shared = DataManager()
 
-    func storeData(at location:URL!=nil) throws {
+    func storeData(at location: URL! = nil) throws {
         let url = location ?? plistURL
         if let data = try? PropertyListEncoder().encode(Create.shared.existingGroups) {
             if FileManager.default.fileExists(atPath: url.path) {
@@ -28,11 +22,11 @@ class DataManager {
         }
     }
 
-    func loadAllGroups(from plist:URL! = nil){
+    func loadAllGroups(from plist: URL! = nil) {
         let url = plist ?? plistURL
         if FileManager.default.fileExists(atPath: url.path) {
-            guard let data = FileManager.default.contents(atPath: url.path) else {return}
-            guard let storedGroups = try? PropertyListDecoder().decode([Create.Group].self, from: data) else {return}
+            guard let data = FileManager.default.contents(atPath: url.path) else { return }
+            guard let storedGroups = try? PropertyListDecoder().decode([Create.Group].self, from: data) else { return }
             print("Stored Groups are \(storedGroups)")
             Create.shared.existingGroups = storedGroups
         }
