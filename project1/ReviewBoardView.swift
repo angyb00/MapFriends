@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 private struct Review: Identifiable {
