@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct ReviewWritingView: View {
-    @State var location: String
-    @State var sublocation: String
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State var location: String = "Los Angeles"
+    @State var sublocation: String = "Disneyland"
     @State var reviewText: String = "Write your review here..."
 
     init(for subloc: String, at loc: String) {
         self.location = loc
         self.sublocation = subloc
+        
     }
 
     var body: some View {
@@ -46,17 +49,22 @@ struct ReviewWritingView: View {
             try BackendService.postReview(for: sublocation, at: location, text: contents)
         } catch BackendError.locationNotFound {
             // Pop error message
-            print("Location not found.")
+            print("Location \(location) not found.")
+            presentationMode.wrappedValue.dismiss()
             return
         } catch BackendError.sublocationNotFound {
             // Pop error message
-            print("Sublocation not found.")
+            print("Sublocation \(sublocation) not found.")
+            presentationMode.wrappedValue.dismiss()
             return
         } catch {
             // Pop error message
             print("Unexpected error.")
+            presentationMode.wrappedValue.dismiss()
             return
         }
+        
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

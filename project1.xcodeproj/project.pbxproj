@@ -15,6 +15,7 @@
 		7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDE626F3F90D009DD310 /* project1UITests.swift */; };
 		7316FDF526F3F92D009DD310 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDF426F3F92D009DD310 /* .gitignore */; };
 		73580D9B272209A80069A45B /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
+		7376C1C8276299AC00A7E32F /* firstTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376C1C7276299AC00A7E32F /* firstTab.swift */; };
 		738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
 		738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F8746270FA6160095F73D /* ReviewBoardView.swift */; };
 		73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
@@ -30,7 +31,6 @@
 		73FD409827598043007AAFA8 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409527598043007AAFA8 /* DashBoardView.swift */; };
 		73FD409927598043007AAFA8 /* friendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409627598043007AAFA8 /* friendsList.swift */; };
 		76F158B526FAEA2200F4470C /* loginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F158B426FAEA2200F4470C /* loginTest.swift */; };
-		76F158B726FAEC1B00F4470C /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F158B626FAEC1B00F4470C /* HomeScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +64,7 @@
 		7316FDE626F3F90D009DD310 /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
 		7316FDE826F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7376C1C7276299AC00A7E32F /* firstTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstTab.swift; sourceTree = "<group>"; };
 		738F8746270FA6160095F73D /* ReviewBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoardView.swift; sourceTree = "<group>"; };
 		73A2453D26FD0C7600FE29D9 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 		73AC21052747143F00E7BC55 /* ReviewWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWritingView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		73FD409527598043007AAFA8 /* DashBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		73FD409627598043007AAFA8 /* friendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendsList.swift; sourceTree = "<group>"; };
 		76F158B426FAEA2200F4470C /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
-		76F158B626FAEC1B00F4470C /* HomeScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,7 @@
 		7316FDC826F3F90B009DD310 /* project1 */ = {
 			isa = PBXGroup;
 			children = (
+				7376C1C7276299AC00A7E32F /* firstTab.swift */,
 				73FD409527598043007AAFA8 /* DashBoardView.swift */,
 				73FD409627598043007AAFA8 /* friendsList.swift */,
 				73FD409427598043007AAFA8 /* settingsView.swift */,
@@ -142,7 +143,6 @@
 				7316FDCD26F3F90D009DD310 /* Assets.xcassets */,
 				7316FDD226F3F90D009DD310 /* Info.plist */,
 				7316FDCF26F3F90D009DD310 /* Preview Content */,
-				76F158B626FAEC1B00F4470C /* HomeScreen.xib */,
 				73A2453D26FD0C7600FE29D9 /* BackendService.swift */,
 				738F8746270FA6160095F73D /* ReviewBoardView.swift */,
 				73AC21052747143F00E7BC55 /* ReviewWritingView.swift */,
@@ -281,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F158B726FAEC1B00F4470C /* HomeScreen.xib in Resources */,
 				7316FDD126F3F90D009DD310 /* Preview Assets.xcassets in Resources */,
 				7316FDF526F3F92D009DD310 /* .gitignore in Resources */,
 				7316FDCE26F3F90D009DD310 /* Assets.xcassets in Resources */,
@@ -309,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7376C1C8276299AC00A7E32F /* firstTab.swift in Sources */,
 				73B02DF42759843B0084B87A /* GroupDetails.swift in Sources */,
 				73AC21062747143F00E7BC55 /* ReviewWritingView.swift in Sources */,
 				738F8747270FA6160095F73D /* ReviewBoardView.swift in Sources */,

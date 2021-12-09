@@ -14,6 +14,8 @@ struct ReviewBoardView: View {
     init(for sublocation: String, at location: String) {
         self.location = location
         self.sublocation = sublocation
+        
+        print("\(location) \(sublocation)")
 
         do {
             try reviews = BackendService.getReviews(for: sublocation, at: location).map { Review(content: $0) }
@@ -33,6 +35,15 @@ struct ReviewBoardView: View {
                 Button("Add Review") {
                     addReview = !addReview
                 }
+                
+                // Refresh the content
+                Button("Refresh") {
+                    do {
+                        try reviews = BackendService.getReviews(for: sublocation, at: location).map { Review(content: $0) }
+                    } catch {
+                        reviews = []
+                    }
+                }
             }.padding()
 
             // Show previous reviews
@@ -43,7 +54,7 @@ struct ReviewBoardView: View {
 
             // sheet used for showing review text editor view
         }.sheet(isPresented: $addReview) {
-            ReviewWritingView(for: "Disneyland", at: "Los Angeles")
+            ReviewWritingView(for: sublocation, at: location)
         }
     }
 }
