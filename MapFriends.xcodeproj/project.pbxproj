@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7306F55F270F95200002427B /* project1BackendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306F55D270F91AF0002427B /* project1BackendTests.swift */; };
-		7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDC926F3F90B009DD310 /* project1App.swift */; };
+		7316FDCA26F3F90B009DD310 /* MapFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */; };
 		7316FDCE26F3F90D009DD310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDCD26F3F90D009DD310 /* Assets.xcassets */; };
 		7316FDD126F3F90D009DD310 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDD026F3F90D009DD310 /* Preview Assets.xcassets */; };
-		7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDDB26F3F90D009DD310 /* project1Tests.swift */; };
-		7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDE626F3F90D009DD310 /* project1UITests.swift */; };
 		7316FDF526F3F92D009DD310 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDF426F3F92D009DD310 /* .gitignore */; };
 		73580D9B272209A80069A45B /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2453D26FD0C7600FE29D9 /* BackendService.swift */; };
 		7376C1C8276299AC00A7E32F /* firstTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376C1C7276299AC00A7E32F /* firstTab.swift */; };
@@ -30,7 +27,6 @@
 		73FD409727598043007AAFA8 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409427598043007AAFA8 /* settingsView.swift */; };
 		73FD409827598043007AAFA8 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409527598043007AAFA8 /* DashBoardView.swift */; };
 		73FD409927598043007AAFA8 /* friendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FD409627598043007AAFA8 /* friendsList.swift */; };
-		76F158B526FAEA2200F4470C /* loginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F158B426FAEA2200F4470C /* loginTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,18 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7306F55D270F91AF0002427B /* project1BackendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1BackendTests.swift; sourceTree = "<group>"; };
-		7316FDC626F3F90B009DD310 /* project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7316FDC926F3F90B009DD310 /* project1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1App.swift; sourceTree = "<group>"; };
+		7316FDC626F3F90B009DD310 /* MapFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFriendsApp.swift; sourceTree = "<group>"; };
 		7316FDCD26F3F90D009DD310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7316FDD026F3F90D009DD310 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7316FDD226F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7316FDD726F3F90D009DD310 /* project1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7316FDDB26F3F90D009DD310 /* project1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1Tests.swift; sourceTree = "<group>"; };
-		7316FDDD26F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7316FDE226F3F90D009DD310 /* project1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7316FDE626F3F90D009DD310 /* project1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project1UITests.swift; sourceTree = "<group>"; };
-		7316FDE826F3F90D009DD310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7316FDD726F3F90D009DD310 /* MapFriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapFriendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7316FDE226F3F90D009DD310 /* MapFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316FDF426F3F92D009DD310 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7376C1C7276299AC00A7E32F /* firstTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = firstTab.swift; sourceTree = "<group>"; };
 		738F8746270FA6160095F73D /* ReviewBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewBoardView.swift; sourceTree = "<group>"; };
@@ -77,7 +68,6 @@
 		73FD409427598043007AAFA8 /* settingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
 		73FD409527598043007AAFA8 /* DashBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		73FD409627598043007AAFA8 /* friendsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendsList.swift; sourceTree = "<group>"; };
-		76F158B426FAEA2200F4470C /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				7316FDF426F3F92D009DD310 /* .gitignore */,
-				7316FDC826F3F90B009DD310 /* project1 */,
-				7316FDDA26F3F90D009DD310 /* project1Tests */,
-				7316FDE526F3F90D009DD310 /* project1UITests */,
+				7316FDC826F3F90B009DD310 /* MapFriends */,
 				7316FDC726F3F90B009DD310 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,14 +107,14 @@
 		7316FDC726F3F90B009DD310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7316FDC626F3F90B009DD310 /* project1.app */,
-				7316FDD726F3F90D009DD310 /* project1Tests.xctest */,
-				7316FDE226F3F90D009DD310 /* project1UITests.xctest */,
+				7316FDC626F3F90B009DD310 /* MapFriends.app */,
+				7316FDD726F3F90D009DD310 /* MapFriendsTests.xctest */,
+				7316FDE226F3F90D009DD310 /* MapFriendsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7316FDC826F3F90B009DD310 /* project1 */ = {
+		7316FDC826F3F90B009DD310 /* MapFriends */ = {
 			isa = PBXGroup;
 			children = (
 				7376C1C7276299AC00A7E32F /* firstTab.swift */,
@@ -136,7 +124,7 @@
 				73B02DF5275985160084B87A /* CreateGroup.swift */,
 				73B02DF0275984340084B87A /* DataManager.swift */,
 				73B02DEF275984340084B87A /* ExistingGroups.swift */,
-				7316FDC926F3F90B009DD310 /* project1App.swift */,
+				7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */,
 				73B02DF32759843B0084B87A /* GroupDetails.swift */,
 				73B02DEB275983FF0084B87A /* LoginAuth.swift */,
 				73B02DEC275983FF0084B87A /* LoginView.swift */,
@@ -147,7 +135,7 @@
 				738F8746270FA6160095F73D /* ReviewBoardView.swift */,
 				73AC21052747143F00E7BC55 /* ReviewWritingView.swift */,
 			);
-			path = project1;
+			path = MapFriends;
 			sourceTree = "<group>";
 		};
 		7316FDCF26F3F90D009DD310 /* Preview Content */ = {
@@ -158,32 +146,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7316FDDA26F3F90D009DD310 /* project1Tests */ = {
-			isa = PBXGroup;
-			children = (
-				7306F55D270F91AF0002427B /* project1BackendTests.swift */,
-				7316FDDB26F3F90D009DD310 /* project1Tests.swift */,
-				7316FDDD26F3F90D009DD310 /* Info.plist */,
-				76F158B426FAEA2200F4470C /* loginTest.swift */,
-			);
-			path = project1Tests;
-			sourceTree = "<group>";
-		};
-		7316FDE526F3F90D009DD310 /* project1UITests */ = {
-			isa = PBXGroup;
-			children = (
-				7316FDE626F3F90D009DD310 /* project1UITests.swift */,
-				7316FDE826F3F90D009DD310 /* Info.plist */,
-			);
-			path = project1UITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7316FDC526F3F90B009DD310 /* project1 */ = {
+		7316FDC526F3F90B009DD310 /* MapFriends */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7316FDEB26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1" */;
+			buildConfigurationList = 7316FDEB26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriends" */;
 			buildPhases = (
 				7316FDC226F3F90B009DD310 /* Sources */,
 				7316FDC326F3F90B009DD310 /* Frameworks */,
@@ -193,14 +161,14 @@
 			);
 			dependencies = (
 			);
-			name = project1;
+			name = MapFriends;
 			productName = project1;
-			productReference = 7316FDC626F3F90B009DD310 /* project1.app */;
+			productReference = 7316FDC626F3F90B009DD310 /* MapFriends.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7316FDD626F3F90D009DD310 /* project1Tests */ = {
+		7316FDD626F3F90D009DD310 /* MapFriendsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7316FDEE26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1Tests" */;
+			buildConfigurationList = 7316FDEE26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriendsTests" */;
 			buildPhases = (
 				7316FDD326F3F90D009DD310 /* Sources */,
 				7316FDD426F3F90D009DD310 /* Frameworks */,
@@ -211,14 +179,14 @@
 			dependencies = (
 				7316FDD926F3F90D009DD310 /* PBXTargetDependency */,
 			);
-			name = project1Tests;
+			name = MapFriendsTests;
 			productName = project1Tests;
-			productReference = 7316FDD726F3F90D009DD310 /* project1Tests.xctest */;
+			productReference = 7316FDD726F3F90D009DD310 /* MapFriendsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7316FDE126F3F90D009DD310 /* project1UITests */ = {
+		7316FDE126F3F90D009DD310 /* MapFriendsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7316FDF126F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1UITests" */;
+			buildConfigurationList = 7316FDF126F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriendsUITests" */;
 			buildPhases = (
 				7316FDDE26F3F90D009DD310 /* Sources */,
 				7316FDDF26F3F90D009DD310 /* Frameworks */,
@@ -229,9 +197,9 @@
 			dependencies = (
 				7316FDE426F3F90D009DD310 /* PBXTargetDependency */,
 			);
-			name = project1UITests;
+			name = MapFriendsUITests;
 			productName = project1UITests;
-			productReference = 7316FDE226F3F90D009DD310 /* project1UITests.xctest */;
+			productReference = 7316FDE226F3F90D009DD310 /* MapFriendsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7316FDC126F3F90B009DD310 /* Build configuration list for PBXProject "project1" */;
+			buildConfigurationList = 7316FDC126F3F90B009DD310 /* Build configuration list for PBXProject "MapFriends" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -269,9 +237,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7316FDC526F3F90B009DD310 /* project1 */,
-				7316FDD626F3F90D009DD310 /* project1Tests */,
-				7316FDE126F3F90D009DD310 /* project1UITests */,
+				7316FDC526F3F90B009DD310 /* MapFriends */,
+				7316FDD626F3F90D009DD310 /* MapFriendsTests */,
+				7316FDE126F3F90D009DD310 /* MapFriendsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,7 +289,7 @@
 				73B02DED275983FF0084B87A /* LoginAuth.swift in Sources */,
 				73B02DF2275984340084B87A /* DataManager.swift in Sources */,
 				73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */,
-				7316FDCA26F3F90B009DD310 /* project1App.swift in Sources */,
+				7316FDCA26F3F90B009DD310 /* MapFriendsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7306F55F270F95200002427B /* project1BackendTests.swift in Sources */,
 				73A2453F26FD0C7600FE29D9 /* BackendService.swift in Sources */,
-				7316FDDC26F3F90D009DD310 /* project1Tests.swift in Sources */,
-				76F158B526FAEA2200F4470C /* loginTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7316FDE726F3F90D009DD310 /* project1UITests.swift in Sources */,
 				73580D9B272209A80069A45B /* BackendService.swift in Sources */,
 				738F8748270FA6160095F73D /* ReviewBoardView.swift in Sources */,
 			);
@@ -351,12 +315,12 @@
 /* Begin PBXTargetDependency section */
 		7316FDD926F3F90D009DD310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7316FDC526F3F90B009DD310 /* project1 */;
+			target = 7316FDC526F3F90B009DD310 /* MapFriends */;
 			targetProxy = 7316FDD826F3F90D009DD310 /* PBXContainerItemProxy */;
 		};
 		7316FDE426F3F90D009DD310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7316FDC526F3F90B009DD310 /* project1 */;
+			target = 7316FDC526F3F90B009DD310 /* MapFriends */;
 			targetProxy = 7316FDE326F3F90D009DD310 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,10 +448,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"project1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MapFriends/Preview Content\"";
 				DEVELOPMENT_TEAM = N29GT8PCM7;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = project1/Info.plist;
+				INFOPLIST_FILE = MapFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,10 +470,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"project1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MapFriends/Preview Content\"";
 				DEVELOPMENT_TEAM = N29GT8PCM7;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = project1/Info.plist;
+				INFOPLIST_FILE = MapFriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +493,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N29GT8PCM7;
-				INFOPLIST_FILE = project1Tests/Info.plist;
+				INFOPLIST_FILE = MapFriendsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,7 +504,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project1.app/project1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapFriends.app/MapFriends";
 			};
 			name = Debug;
 		};
@@ -551,7 +515,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N29GT8PCM7;
-				INFOPLIST_FILE = project1Tests/Info.plist;
+				INFOPLIST_FILE = MapFriendsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +526,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/project1.app/project1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MapFriends.app/MapFriends";
 			};
 			name = Release;
 		};
@@ -572,7 +536,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N29GT8PCM7;
-				INFOPLIST_FILE = project1UITests/Info.plist;
+				INFOPLIST_FILE = MapFriendsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +556,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N29GT8PCM7;
-				INFOPLIST_FILE = project1UITests/Info.plist;
+				INFOPLIST_FILE = MapFriendsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +573,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7316FDC126F3F90B009DD310 /* Build configuration list for PBXProject "project1" */ = {
+		7316FDC126F3F90B009DD310 /* Build configuration list for PBXProject "MapFriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7316FDE926F3F90D009DD310 /* Debug */,
@@ -618,7 +582,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7316FDEB26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1" */ = {
+		7316FDEB26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriends" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7316FDEC26F3F90D009DD310 /* Debug */,
@@ -627,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7316FDEE26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1Tests" */ = {
+		7316FDEE26F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriendsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7316FDEF26F3F90D009DD310 /* Debug */,
@@ -636,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7316FDF126F3F90D009DD310 /* Build configuration list for PBXNativeTarget "project1UITests" */ = {
+		7316FDF126F3F90D009DD310 /* Build configuration list for PBXNativeTarget "MapFriendsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7316FDF226F3F90D009DD310 /* Debug */,

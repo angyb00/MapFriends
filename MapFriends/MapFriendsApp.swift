@@ -8,7 +8,8 @@
 import SwiftUI
 
 @main
-struct project1App: App {
+struct MapFriendsApp: App {
+    
     var body: some Scene {
         WindowGroup {
             LoginAuth()
