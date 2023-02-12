@@ -7,7 +7,7 @@ struct settings: View {
     var body: some View {
         // If log out is pressed, go back to login view
         if loggedOut {
-            LoginAuth()
+            ContentView()
         }
         // Stay on settings view if logged in
         else {

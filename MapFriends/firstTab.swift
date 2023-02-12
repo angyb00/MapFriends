@@ -40,7 +40,7 @@ struct firstTab: View {
                         reviewMode = !reviewMode
                     }, label: {
                         PlaceAnnotationView()
-                    })
+                    }).buttonStyle(.borderless)
                 }
             }
             .padding(.top)
@@ -48,38 +48,38 @@ struct firstTab: View {
 
             VStack {
                 HStack {
-                    Button { // Add groups button
-                        self.showCreateGroup = true
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.largeTitle)
-                    }
-                    .fullScreenCover(isPresented: $showCreateGroup) {
-                        print("")
-                    } content: {
-                        GroupDetails()
-                    }
+//                    Button { // Add groups button
+//                        self.showCreateGroup = true
+//                    } label: {
+//                        Image(systemName: "plus.circle.fill")
+//                            .font(.largeTitle)
+//                    }
+//                    .fullScreenCover(isPresented: $showCreateGroup) {
+//                        print("")
+//                    } content: {
+//                        GroupDetails()
+//                    }
 
                     Spacer()
 
-                    Button { // Show created groups button
-                        self.showGroups = true
-                    } label: {
-                        Text("Groups")
-                            .bold()
-                            .font(.headline)
-                    }.fullScreenCover(isPresented: $showGroups) {} content: {
-                        ExistingGroups()
+//                    Button { // Show created groups button
+//                        self.showGroups = true
+//                    } label: {
+//                        Text("Groups")
+//                            .bold()
+//                            .font(.headline)
+//                    }.fullScreenCover(isPresented: $showGroups) {} content: {
+//                        ExistingGroups()
                     }
                 }
 
                 Spacer()
             }
-        }.sheet(isPresented: $reviewMode) {
-            ReviewBoardView(for: "Disneyland", at: "Los Angeles")
-        }
+        }//.sheet(isPresented: $reviewMode) {
+           // ReviewBoardView(for: "Disneyland", at: "Los Angeles")
+        //}
     }
-}
+//}
 
 struct firstTab_Previews: PreviewProvider {
     static var previews: some View {
