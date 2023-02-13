@@ -16,7 +16,7 @@ struct MapFriendsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            let loginVM = LoginViewModel()
+            let loginVM = AuthViewModel()
             ContentView().environmentObject(loginVM)
         }
     }
