@@ -1,26 +1,11 @@
 import SwiftUI
 
-// View will decide whether logged in or log out is pressed
+
 struct settings: View {
-    @State var loggedOut: Bool = false
-
-    var body: some View {
-        // If log out is pressed, go back to login view
-        if loggedOut {
-            ContentView()
-        }
-        // Stay on settings view if logged in
-        else {
-            settingsView(loggedOut: $loggedOut)
-        }
-    }
-}
-
-struct settingsView: View {
     @State var username = "John Doe"
     @State var notiEnabled = false
-    @Binding var loggedOut: Bool // Dictates what view settings will show
-
+    @EnvironmentObject var loginViewModel: AuthViewModel
+    
     var body: some View {
         NavigationView {
             Form {
@@ -41,7 +26,8 @@ struct settingsView: View {
                 }
                 Section {
                     // Button for logging out
-                    Button(action: { loggedOut = true }, label: { Text("Log out")
+                    Button(action: { loginViewModel.signOut()},
+                           label: { Text("Sign out")
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .center)
                             .foregroundColor(.red)

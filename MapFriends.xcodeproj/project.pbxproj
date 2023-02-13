@@ -13,6 +13,7 @@
 		4194605A2998A53B00B2407B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 419460592998A53B00B2407B /* FirebaseFirestore */; };
 		4194605C2998A53B00B2407B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4194605B2998A53B00B2407B /* FirebaseMessaging */; };
 		4194605E2998A53B00B2407B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4194605D2998A53B00B2407B /* FirebaseStorage */; };
+		419460612999B19800B2407B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419460602999B19800B2407B /* AuthViewModel.swift */; };
 		7316FDCA26F3F90B009DD310 /* MapFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */; };
 		7316FDCE26F3F90D009DD310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDCD26F3F90D009DD310 /* Assets.xcassets */; };
 		7316FDD126F3F90D009DD310 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7316FDD026F3F90D009DD310 /* Preview Assets.xcassets */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		419460522998A0B300B2407B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		419460602999B19800B2407B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7316FDC626F3F90B009DD310 /* MapFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFriendsApp.swift; sourceTree = "<group>"; };
 		7316FDCD26F3F90D009DD310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4194605F2999B17E00B2407B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				419460602999B19800B2407B /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		419460632999B41600B2407B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73B02DEC275983FF0084B87A /* LoginView.swift */,
+				73FD409527598043007AAFA8 /* DashBoardView.swift */,
+				7376C1C7276299AC00A7E32F /* firstTab.swift */,
+				73FD409627598043007AAFA8 /* friendsList.swift */,
+				73FD409427598043007AAFA8 /* settingsView.swift */,
+				73B02DF5275985160084B87A /* CreateGroup.swift */,
+				73B02DF0275984340084B87A /* DataManager.swift */,
+				73B02DEF275984340084B87A /* ExistingGroups.swift */,
+				73B02DF32759843B0084B87A /* GroupDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7316FDBD26F3F90B009DD310 = {
 			isa = PBXGroup;
 			children = (
@@ -127,16 +153,9 @@
 		7316FDC826F3F90B009DD310 /* MapFriends */ = {
 			isa = PBXGroup;
 			children = (
-				7376C1C7276299AC00A7E32F /* firstTab.swift */,
-				73FD409527598043007AAFA8 /* DashBoardView.swift */,
-				73FD409627598043007AAFA8 /* friendsList.swift */,
-				73FD409427598043007AAFA8 /* settingsView.swift */,
-				73B02DF5275985160084B87A /* CreateGroup.swift */,
-				73B02DF0275984340084B87A /* DataManager.swift */,
-				73B02DEF275984340084B87A /* ExistingGroups.swift */,
+				4194605F2999B17E00B2407B /* ViewModels */,
+				419460632999B41600B2407B /* Views */,
 				7316FDC926F3F90B009DD310 /* MapFriendsApp.swift */,
-				73B02DF32759843B0084B87A /* GroupDetails.swift */,
-				73B02DEC275983FF0084B87A /* LoginView.swift */,
 				7316FDCD26F3F90D009DD310 /* Assets.xcassets */,
 				419460522998A0B300B2407B /* GoogleService-Info.plist */,
 				7316FDD226F3F90D009DD310 /* Info.plist */,
@@ -307,6 +326,7 @@
 				73B02DEE275983FF0084B87A /* LoginView.swift in Sources */,
 				73FD409827598043007AAFA8 /* DashBoardView.swift in Sources */,
 				73FD409727598043007AAFA8 /* settingsView.swift in Sources */,
+				419460612999B19800B2407B /* AuthViewModel.swift in Sources */,
 				73B02DF2275984340084B87A /* DataManager.swift in Sources */,
 				73A2453E26FD0C7600FE29D9 /* BackendService.swift in Sources */,
 				7316FDCA26F3F90B009DD310 /* MapFriendsApp.swift in Sources */,

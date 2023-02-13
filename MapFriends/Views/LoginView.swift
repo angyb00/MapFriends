@@ -1,43 +1,8 @@
-import FirebaseAuth
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
-    let auth = Auth.auth()
-    
-    @Published var signedIn = false
-    var isSignedIn: Bool { return auth.currentUser != nil }
-    
-    func logIn(email: String, password: String) {
-        auth.signIn(withEmail: email, password: password) { [weak self] result, error in
-            
-            guard result != nil, error == nil else {
-                return
-            }
-            
-            // Success
-            DispatchQueue.main.async {
-                self?.signedIn = true
-            }
-        }
-    }
-    
-    func signUp(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
-            
-            guard result != nil, error == nil else {
-                return
-            }
-            
-            // Success
-            DispatchQueue.main.async {
-                self?.signedIn = true
-            }
-        }
-    }
-}
 
 struct ContentView: View {
-    @EnvironmentObject var loginVM: LoginViewModel
+    @EnvironmentObject var loginVM: AuthViewModel
     var body: some View {
         NavigationView {
             if loginVM.signedIn {
@@ -55,7 +20,7 @@ struct ContentView: View {
 struct LoginView: View {
     @State var username: String = ""
     @State var password: String = ""
-    @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var loginViewModel: AuthViewModel
     
     fileprivate func WelcomeMessage() -> Text {
         return Text("Travel Together!")
@@ -112,7 +77,7 @@ struct LoginView: View {
 struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
-    @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var loginViewModel: AuthViewModel
     
     fileprivate func WelcomeMessage() -> Text {
         return Text("Travel Together!")
