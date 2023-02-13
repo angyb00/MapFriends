@@ -18,6 +18,7 @@ class AuthViewModel: ObservableObject {
         auth.signIn(withEmail: email, password: password) { [weak self] result, error in
             
             guard result != nil, error == nil else {
+                print(error.localizedDescription)
                 return
             }
             
@@ -32,6 +33,7 @@ class AuthViewModel: ObservableObject {
         auth.createUser(withEmail: email, password: password) { [weak self] result, error in
             
             guard result != nil, error == nil else {
+                print(error?.localizedDescription)
                 return
             }
             
