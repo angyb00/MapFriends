@@ -5,7 +5,7 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var firstName: String = ""
     @State var lastName: String = ""
-    @State var username: String = ""
+    @State var userName: String = ""
 
     @EnvironmentObject var loginViewModel: AuthViewModel
     
@@ -24,7 +24,7 @@ struct SignUpView: View {
                 .font(.largeTitle)
                 .scaledToFit()
             
-            TextField("Username", text: $username)
+            TextField("Username", text: $userName)
                 .padding()
                 .background(Color(.secondarySystemBackground))
                 .autocorrectionDisabled(true)
@@ -59,11 +59,11 @@ struct SignUpView: View {
                 .cornerRadius(20)
             
             Button(action: {
-                guard !email.isEmpty, !password.isEmpty, !firstName.isEmpty, !lastName.isEmpty, !username.isEmpty else {
+                guard !email.isEmpty, !password.isEmpty, !firstName.isEmpty, !lastName.isEmpty, !userName.isEmpty else {
                     return
                 }
                 
-                loginViewModel.signUp(email: email, password: password)
+                loginViewModel.signUp(email: email, password: password, firstName: firstName, lastName: lastName, userName: userName)
                 
             }, label: {
                 Text("Sign Up")
